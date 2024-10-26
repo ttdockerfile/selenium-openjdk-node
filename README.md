@@ -1,1 +1,1 @@
-`selenium/standalone-chrome:123`安装`java11`和`node20`
+`selenium/standalone-chrome:123.0`安装`java11`和`node20`

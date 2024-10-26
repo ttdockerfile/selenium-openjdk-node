@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome:123
+FROM selenium/standalone-chrome:123.0
 
 # 设置环境变量
 ENV NODE_VERSION=20.x
