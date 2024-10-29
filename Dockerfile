@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome:123.0
+FROM seleniarm/standalone-chromium:123.0
 
 # 安装OpenJDK 11
 USER root
