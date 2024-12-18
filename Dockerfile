@@ -2,7 +2,9 @@ FROM linuxserver/chromium
 
 # 安装OpenJDK 11和 node 20
 USER root
-RUN apt-get update && \
+RUN echo "deb http://deb.debian.org/debian bookworm main contrib non-free" > /etc/apt/sources.list && \
+    echo "deb http://deb.debian.org/debian bookworm-updates main contrib non-free" >> /etc/apt/sources.list && \
+    apt-get update && \
     apt-get install -y openjdk-11-jdk curl ca-certificates && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs && \
