@@ -1,12 +1,7 @@
-FROM linuxserver/chromium
+FROM debian:12
 
-# 安装OpenJDK 11和 node 20
-USER root
-RUN echo "deb http://deb.debian.org/debian/ bullseye main" >> /etc/apt/sources.list && \
-    echo "deb-src http://deb.debian.org/debian/ bullseye main" >> /etc/apt/sources.list && \
-    mkdir -p /usr/share/man/man1 && \
-    apt-get update && \
-    apt-get install -y openjdk-11-jdk curl ca-certificates && \
+RUN apt-get update && \
+	apt-get install chromium openjdk-11-jdk curl ca-certificates && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs && \
     # 检测架构并设置 URL 和 JAVA_HOME
