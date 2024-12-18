@@ -1,4 +1,4 @@
-FROM seleniarm/standalone-chromium:123.0
+FROM linuxserver/chromium
 
 # 安装OpenJDK 11和 node 20
 USER root
