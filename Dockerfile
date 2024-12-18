@@ -2,7 +2,9 @@ FROM linuxserver/chromium
 
 # 安装OpenJDK 11和 node 20
 USER root
-RUN echo "deb http://deb.debian.org/debian unstable main non-free contrib" >> /etc/apt/sources.list && \
+RUN echo "deb http://deb.debian.org/debian/ bullseye main" >> /etc/apt/sources.list && \
+    echo "deb-src http://deb.debian.org/debian/ bullseye main" >> /etc/apt/sources.list && \
+    mkdir -p /usr/share/man/man1 && \
     apt-get update && \
     apt-get install -y openjdk-11-jdk curl ca-certificates && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
